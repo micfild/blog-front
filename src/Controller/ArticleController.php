@@ -22,6 +22,18 @@ class ArticleController extends AbstractController
     {
         return $this->render('article/index.html.twig', [
             'articles' => $articleRepository->findAll(),
+            'foo' => 42,
+            'bar' => [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+            ],
         ]);
     }
 
