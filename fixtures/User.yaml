@@ -1,0 +1,10 @@
+App\Entity\User:
+    user (template):
+        plainPassword: '<password()>'
+        email: '<email()>'
+
+    users{0..9} (extends user): ~
+
+    admin (extends user):
+        email: 'admin@example.com'
+        plainPassword: 'admin'
