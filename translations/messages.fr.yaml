@@ -1,2 +1,11 @@
 site:
     title: "Mon blog"
+
+menu:
+    home: "Accueil"
+    article:
+        index: "Liste d'article"
+        new: "Nouvel article"
+    user:
+        index: "Liste d'utilisateur"
+        new: "Nouvel utilisateur"
