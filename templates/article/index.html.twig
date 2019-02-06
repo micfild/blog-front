@@ -5,6 +5,14 @@
 {% block body %}
     <h1>Article index {{ foo }}</h1>
 
+    {{ bar|first }}
+    {{ bar|last }}
+    {{ bar|join(',' , 'text.and'|trans) }}
+
+    <script>
+        var data = {{ bar|json_encode }};
+    </script>
+
     {#  Comments #}
     <ul>
     {% for b in bar %}

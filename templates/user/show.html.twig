@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>User</h1>
-
+    {{ dump(user) }}
     <table class="table">
         <tbody>
             <tr>
@@ -23,12 +23,41 @@
                 <th>Password</th>
                 <td>{{ user.password }}</td>
             </tr>
+            <tr>
+                <th>Nombre de commentaires</th>
+                <td>{{ user.comments|length }}</td>
+            </tr>
+            <tr>
+                <th>Nombre d'articles</th>
+                <td>{{ user.articles|length }}</td>
+            </tr>
         </tbody>
     </table>
 
     <a href="{{ path('user_index') }}">back to list</a>
 
     <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+
+    <div>
+        <h2>Liste d'articles de {{ user.email }}</h2>
+    </div>
+    <table class="table">
+        <tbody>
+        {% for article in user.articles %}
+        <tr>
+            <th>{{ article.id }}</th>
+            <td>{{ article.title }}</td>
+            <td><a href="{{ path('article_edit', {'id': article.id}) }}">edit</a></td>
+        </tr>
+        {% for comment in article.comments %}
+        <tr>
+            <th></th>
+            <td>{{ comment.text }}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}

@@ -13,7 +13,13 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('createdAt')
-            ->add('title')
+            ->add('title', null, [
+                'attr' => [
+                    'placeholder' => "title",
+                    'class' => "text-danger",
+                ],
+                'help' => 'some.translation',
+            ])
             ->add('body')
             ->add('author')
             ->add('categories')

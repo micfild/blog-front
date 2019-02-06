@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <th>CreatedAt</th>
-                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ article.createdAt ? article.createdAt|date('d-m-Y H:i') : '' }}</td>
             </tr>
             <tr>
                 <th>Title</th>
@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <th>Body</th>
-                <td>{{ article.body }}</td>
+                <td>{{ article.body|striptags('<p><br><hr><hgroup><h1><h2><h3><h4><h5><h6><ul><ol><li><strong><em><b><i><u><img><blockquote>')|raw }}</td>
             </tr>
         </tbody>
     </table>

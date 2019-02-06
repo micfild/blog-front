@@ -9,3 +9,6 @@ menu:
     user:
         index: "User list"
         new: "New user"
+
+text:
+    and: " and "
