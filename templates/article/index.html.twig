@@ -5,9 +5,25 @@
 {% block body %}
     <h1>Article index {{ foo }}</h1>
 
+    {{ bar|join(', ', 'text.and'|trans|upper) }}
+
+    <div>
+        {{ 200.35|number_format(2) }}
+    </div>
+
+    <div>
+        {{ bar|json_encode }}
+    </div>
+
+    <script>
+        var data = {{ bar|json_encode }};
+    </script>
+
+
+
     {#  Comments #}
     <ul>
-    {% for b in bar %}
+    {% for b in bar|slice(2, 4) %}
         {#{% if b not in [2, 4, 6] %}#}
         {% if  b == 3 %}
             <li>Valeur masquée</li>

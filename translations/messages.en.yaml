@@ -1,6 +1,9 @@
 site:
     title: "My blog"
 
+text:
+    and: " and "
+
 menu:
     home: "Home"
     article:

@@ -5,6 +5,8 @@
 {% block body %}
     <h1>User</h1>
 
+    {% dump %}
+
     <table class="table">
         <tbody>
             <tr>
@@ -23,8 +25,30 @@
                 <th>Password</th>
                 <td>{{ user.password }}</td>
             </tr>
+            <tr>
+                <th>Nb articles</th>
+                <td>{{ user.articles|length }}</td>
+            </tr>
+            <tr>
+                <th>Nb comments</th>
+                <td>{{ user.comments|length }}</td>
+            </tr>
         </tbody>
     </table>
+
+    <h2>
+        User's articles
+    </h2>
+
+    <ul>
+        {% for article in user.articles %}
+            <li>
+                <a href="{{ path('article_show', {'id': article.id}) }}">
+                    {{ article.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 
     <a href="{{ path('user_index') }}">back to list</a>
 
