@@ -13,7 +13,11 @@
             </tr>
             <tr>
                 <th>CreatedAt</th>
+<<<<<<< HEAD
                 <td>{{ article.createdAt ? article.createdAt|date('d-m-Y H:i') : '' }}</td>
+=======
+                <td>{{ article.createdAt ? article.createdAt|date('d/m/Y - H:i') : '' }}</td>
+>>>>>>> dec14582234495a258c4740b65825b16525e4048
             </tr>
             <tr>
                 <th>Title</th>
@@ -21,7 +25,11 @@
             </tr>
             <tr>
                 <th>Body</th>
+<<<<<<< HEAD
                 <td>{{ article.body|striptags('<p><br><hr><hgroup><h1><h2><h3><h4><h5><h6><ul><ol><li><strong><em><b><i><u><img><blockquote>')|raw }}</td>
+=======
+                <td>{{ article.body|striptags('<p><strong><em><img><u>')|raw }}</td>
+>>>>>>> dec14582234495a258c4740b65825b16525e4048
             </tr>
         </tbody>
     </table>

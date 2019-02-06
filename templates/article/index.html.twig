@@ -5,17 +5,34 @@
 {% block body %}
     <h1>Article index {{ foo }}</h1>
 
+<<<<<<< HEAD
     {{ bar|first }}
     {{ bar|last }}
     {{ bar|join(',' , 'text.and'|trans) }}
+=======
+    {{ bar|join(', ', 'text.and'|trans|upper) }}
+
+    <div>
+        {{ 200.35|number_format(2) }}
+    </div>
+
+    <div>
+        {{ bar|json_encode }}
+    </div>
+>>>>>>> dec14582234495a258c4740b65825b16525e4048
 
     <script>
         var data = {{ bar|json_encode }};
     </script>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> dec14582234495a258c4740b65825b16525e4048
     {#  Comments #}
     <ul>
-    {% for b in bar %}
+    {% for b in bar|slice(2, 4) %}
         {#{% if b not in [2, 4, 6] %}#}
         {% if  b == 3 %}
             <li>Valeur masquée</li>

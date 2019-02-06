@@ -4,7 +4,13 @@
 
 {% block body %}
     <h1>User</h1>
+<<<<<<< HEAD
     {{ dump(user) }}
+=======
+
+    {% dump %}
+
+>>>>>>> dec14582234495a258c4740b65825b16525e4048
     <table class="table">
         <tbody>
             <tr>
@@ -24,15 +30,38 @@
                 <td>{{ user.password }}</td>
             </tr>
             <tr>
+<<<<<<< HEAD
                 <th>Nombre de commentaires</th>
                 <td>{{ user.comments|length }}</td>
             </tr>
             <tr>
                 <th>Nombre d'articles</th>
                 <td>{{ user.articles|length }}</td>
+=======
+                <th>Nb articles</th>
+                <td>{{ user.articles|length }}</td>
+            </tr>
+            <tr>
+                <th>Nb comments</th>
+                <td>{{ user.comments|length }}</td>
+>>>>>>> dec14582234495a258c4740b65825b16525e4048
             </tr>
         </tbody>
     </table>
+
+    <h2>
+        User's articles
+    </h2>
+
+    <ul>
+        {% for article in user.articles %}
+            <li>
+                <a href="{{ path('article_show', {'id': article.id}) }}">
+                    {{ article.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
 
     <a href="{{ path('user_index') }}">back to list</a>
 
